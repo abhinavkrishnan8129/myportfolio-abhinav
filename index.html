@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhinavkrishnan M — Data Analyst & Full-Stack Developer</title>
+  <meta name="description"
+    content="Portfolio of Abhinavkrishnan M, BCA Graduate, Data Analyst & Full-Stack Developer skilled in Python, SQL, Power BI, Advanced Excel, Next.js, and Tailwind CSS." />
+
+  <!-- Google Fonts: Anton (for display typography), Plus Jakarta Sans (body), Caveat (handwritten script) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN with custom config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            anton: ['Anton', 'sans-serif'],
+            caveat: ['Caveat', 'cursive'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              red: '#e50914',
+              hover: '#ff2432',
+              dark: '#9e0910',
+              glow: 'rgba(229, 9, 20, 0.35)',
+            },
+            dark: {
+              base: '#08080a',
+              card: '#111114',
+              cardHover: '#18181d',
+              border: '#24242a',
+              borderSubtle: '#1b1b22',
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 4s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-8px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #08080a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #27272e;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #e50914;
+    }
+
+    /* Subtle background grid pattern */
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+
+    /* Red glow utility */
+    .red-glow {
+      box-shadow: 0 0 35px rgba(229, 9, 20, 0.3);
+    }
+
+    .red-glow-lg {
+      box-shadow: 0 0 70px rgba(229, 9, 20, 0.45);
+    }
+
+    .text-glow {
+      text-shadow: 0 0 25px rgba(229, 9, 20, 0.5);
+    }
+
+    /* Huge display text watermark */
+    .portfolio-watermark {
+      font-family: 'Anton', sans-serif;
+      color: #df111d;
+      letter-spacing: -0.04em;
+      line-height: 0.82;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* Film grain texture */
+    .film-grain {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+    }
+
+    /* Portrait gradient bottom fade */
+    .portrait-mask {
+      mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+    }
+
+    /* Portrait edge rim light */
+    .portrait-rim {
+      filter: drop-shadow(0 0 25px rgba(229, 9, 20, 0.45));
+    }
+
+    /* Entrance animations */
+    @keyframes portraitRise {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes watermarkSlide {
+      from {
+        opacity: 0;
+        transform: translateY(-24px);
+      }
+
+      to {
+        opacity: 0.95;
+        transform: translateY(0);
+      }
+    }
+
+    .portrait-enter {
+      animation: portraitRise 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .watermark-enter {
+      animation: watermarkSlide 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .portrait-enter,
+      .watermark-enter,
+      .animate-float,
+      .animate-pulse {
+        animation: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+      }
+    }
+  </style>
+</head>
+
+<body
+  class="bg-[#08080a] text-zinc-100 font-sans antialiased selection:bg-[#e50914] selection:text-white relative overflow-x-hidden min-h-screen">
+
+  <!-- Ambient red radial lighting -->
+  <div
+    class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-red-600/10 rounded-full blur-[140px] pointer-events-none -z-10">
+  </div>
+  <div
+    class="fixed bottom-0 right-0 w-[500px] h-[500px] bg-red-900/10 rounded-full blur-[160px] pointer-events-none -z-10">
+  </div>
+
+  <!-- ==================== TOP NAVIGATION ==================== -->
+  <header
+    class="sticky top-0 z-50 backdrop-blur-md bg-[#08080a]/85 border-b border-dark-borderSubtle transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+      <!-- Left: Role & Subtitle -->
+      <a href="#hero" class="flex flex-col group">
+        <span
+          class="font-bold text-base tracking-wider text-white group-hover:text-brand-red transition-colors flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
+          ABHINAVKRISHNAN M
+        </span>
+        <span class="text-xs uppercase tracking-widest text-zinc-400 group-hover:text-zinc-200 transition-colors">
+          DATA ANALYST
+        </span>
+      </a>
+
+      <!-- Center: Nav links -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-zinc-400">
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+        <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+        <a href="#process" class="hover:text-white transition-colors">Work Process</a>
+        <a href="#education" class="hover:text-white transition-colors">Education</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <!-- Right: Status Badge & CTA -->
+      <div class="flex items-center gap-3">
+        <div
+          class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          AVAILABLE FOR HIRE
+        </div>
+
+        <a href="#contact"
+          class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-red hover:bg-brand-hover text-white text-xs font-semibold uppercase tracking-wider transition-all red-glow hover:scale-105 active:scale-95">
+          <span>Let's Talk</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+
+        <!-- Mobile menu toggle button -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-900">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-b border-dark-border bg-[#0d0d10] px-6 py-5 space-y-4">
+      <a href="#projects" class="block text-zinc-300 hover:text-brand-red py-1">Projects</a>
+      <a href="#skills" class="block text-zinc-300 hover:text-brand-red py-1">Skills & Tools</a>
+      <a href="#process" class="block text-zinc-300 hover:text-brand-red py-1">Work Process</a>
+      <a href="#education" class="block text-zinc-300 hover:text-brand-red py-1">Education & Certifications</a>
+      <a href="#contact" class="block text-zinc-300 hover:text-brand-red py-1">Contact Me</a>
+    </div>
+  </header>
+
+
+  <!-- ==================== HERO SECTION (DARK EDITORIAL 3-ZONE LAYOUT) ==================== -->
+  <section id="hero" class="relative pt-4 pb-16 md:pt-8 md:pb-24 overflow-hidden bg-grid-pattern">
+
+    <!-- Ambient Film Grain Overlay -->
+    <div class="absolute inset-0 pointer-events-none film-grain z-0"></div>
+
+    <!-- Centered Ambient Crimson Radial Glow (Behind Subject) -->
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[500px] lg:w-[680px] h-[340px] sm:h-[500px] lg:h-[680px] bg-[radial-gradient(circle,rgba(229,9,20,0.4)_0%,rgba(160,10,20,0.18)_45%,transparent_70%)] blur-3xl pointer-events-none z-0">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <!-- Top banner micro-line -->
+      <div
+        class="flex flex-wrap items-center justify-between text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-4 sm:mb-6 pb-3 border-b border-zinc-900">
+        <span class="text-brand-red flex items-center gap-2">
+          <span>DATA ANALYST &amp; BCA GRADUATE</span>
+        </span>
+        <span class="flex items-center gap-1.5 text-zinc-400">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-red"></i>
+          OPEN FOR ENTRY-LEVEL &amp; FREELANCE ROLES
+        </span>
+      </div>
+
+      <!-- Mobile-only PORTFOLIO Header (Clean top positioning without overlapping content) -->
+      <div class="block lg:hidden text-center watermark-enter select-none pointer-events-none mb-2">
+        <h1 class="portfolio-watermark text-[5.2rem] sm:text-[7.8rem] tracking-tight leading-none">
+          PORTFOLIO
+        </h1>
+      </div>
+
+      <!-- Main Editorial Hero Stage -->
+      <div class="relative min-h-[580px] sm:min-h-[640px] lg:min-h-[720px] flex items-center">
+
+        <!-- Giant Layered Watermark "PORTFOLIO" (Desktop & Laptop: spans full width behind portrait) -->
+        <div
+          class="hidden lg:flex absolute inset-x-0 top-0 lg:top-2 justify-center items-start pointer-events-none select-none z-0 watermark-enter"
+          data-parallax="slow">
+          <h1
+            class="portfolio-watermark text-[14rem] xl:text-[18.5rem] 2xl:text-[21rem] tracking-tight text-center leading-none opacity-95">
+            PORTFOLIO
+          </h1>
+        </div>
+
+        <!-- 3-ZONE COMPOSITION GRID -->
+        <div class="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center">
+
+          <!-- ZONE 1: LEFT COLUMN (Identity, Bio & CTAs) -->
+          <div
+            class="order-2 lg:order-1 lg:col-span-4 flex flex-col justify-center items-start text-left space-y-4 pt-4 lg:pt-0"
+            data-parallax="slow">
+
+            <!-- Handwritten script callout -->
+            <div class="flex items-center gap-2">
+              <span class="font-caveat text-3xl sm:text-4xl text-brand-red font-bold -rotate-3 inline-block">
+                Hello, I'm
+              </span>
+            </div>
+
+            <!-- Heavy Condensed Display Name -->
+            <h1 class="font-anton tracking-tight text-white uppercase leading-[0.92]"
+              style="font-size: clamp(1.6rem, 3.8vw, 3.6rem); white-space: nowrap;">
+              ABHINAVKRISHNAN M
+            </h1>
+
+            <!-- Red Subtitle -->
+            <div class="inline-block pt-1">
+              <p class="text-xs sm:text-sm font-bold tracking-widest uppercase text-brand-red flex items-center gap-2">
+                <span>DATA ANALYST &amp; BCA GRADUATE</span>
+              </p>
+            </div>
+
+            <!-- Two-line Bio Statement -->
+            <p class="text-xs sm:text-sm text-zinc-300 max-w-sm leading-relaxed font-normal">
+              BCA Graduate (8.88 CGPA) specialized in transforming raw business data into actionable strategic insights
+              via Python, SQL, Power BI &amp; Advanced Excel.
+            </p>
+
+            <!-- Location Badge -->
+            <div class="flex items-center gap-1.5 text-xs text-zinc-400 font-medium pt-0.5">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-red"></i>
+              <span>Kasaragod, Kerala, India</span>
+            </div>
+
+            <!-- Action CTA Buttons -->
+            <div class="pt-2 flex flex-wrap items-center gap-3">
+              <a href="#projects"
+                class="px-5 py-2.5 rounded-lg bg-brand-red hover:bg-brand-hover text-white text-xs font-bold uppercase tracking-wider transition-all red-glow flex items-center gap-2 hover:scale-105 active:scale-95">
+                <span>View Work</span>
+                <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+              </a>
+
+              <a href="ABHINAVKRISHNAN_ATS_Resume.pdf" download="ABHINAVKRISHNAN_ATS_Resume.pdf"
+                class="px-4 py-2.5 rounded-lg bg-zinc-900/90 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 hover:border-zinc-700 text-xs font-semibold uppercase tracking-wider transition-all flex items-center gap-2">
+                <i data-lucide="file-text" class="w-3.5 h-3.5 text-brand-red"></i>
+                <span>ATS Resume</span>
+              </a>
+
+              <a href="#contact"
+                class="px-4 py-2.5 rounded-lg bg-transparent hover:bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800/80 text-xs font-medium uppercase tracking-wider transition-all flex items-center gap-1.5">
+                <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                <span>Contact</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- ZONE 2: CENTER PORTRAIT (Frameless Cutout, Head Overlapping Letters) -->
+          <div
+            class="order-1 lg:order-2 lg:col-span-4 relative flex flex-col items-center justify-end self-end z-20 min-h-[360px] sm:min-h-[440px] lg:min-h-[620px]"
+            data-parallax="fast">
+
+            <!-- Ambient Glow directly behind silhouette -->
+            <div
+              class="absolute -inset-4 bg-gradient-to-t from-brand-red/40 via-red-950/20 to-transparent rounded-full blur-2xl pointer-events-none">
+            </div>
+
+            <!-- Portrait Cut-out Image -->
+            <div class="relative w-full flex justify-center items-end portrait-enter">
+              <img id="avatarImg" src="public/profile-cutout.png" alt="Abhinavkrishnan M"
+                class="w-auto max-w-[270px] sm:max-w-[340px] md:max-w-[380px] lg:max-w-[420px] xl:max-w-[440px] max-h-[52vh] sm:max-h-[55vh] lg:max-h-[74vh] object-contain object-bottom portrait-mask portrait-rim select-none pointer-events-none"
+                onerror="this.onerror=null; this.src='assets/reference.jpg';" />
+            </div>
+
+            <!-- Only ONE Floating Glass Chip: "Open to work" with pulsing green dot near shoulder -->
+            <div
+              class="absolute top-[35%] right-2 sm:right-6 lg:-right-3 z-30 px-3 py-1.5 rounded-full bg-zinc-950/80 backdrop-blur-md border border-zinc-800/90 shadow-2xl flex items-center gap-2 animate-float">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="text-[11px] font-semibold text-zinc-200 tracking-wide">Open to work</span>
+            </div>
+
+          </div>
+
+          <!-- ZONE 3: RIGHT COLUMN (Tagline & Editorial Metrics) -->
+          <div
+            class="order-3 lg:order-3 lg:col-span-4 flex flex-col justify-center items-start lg:items-end text-left lg:text-right space-y-6 pt-4 lg:pt-0"
+            data-parallax="slow">
+
+            <!-- Tagline with small red star -->
+            <div class="flex items-start lg:items-center gap-2.5 max-w-xs">
+              <span class="text-brand-red text-base leading-none mt-0.5 lg:order-2">✦</span>
+              <p class="text-xs sm:text-sm text-zinc-300 font-medium leading-snug">
+                Turning raw business data into clear decisions.
+              </p>
+            </div>
+
+            <!-- Thin Divider -->
+            <div class="w-full max-w-[240px] h-px bg-zinc-800/80"></div>
+
+            <!-- Vertical Editorial Stats Stack with Thin Dividers -->
+            <div class="w-full max-w-[240px] space-y-5">
+
+              <!-- Stat 2: 3 Projects -->
+              <div class="flex flex-col items-start lg:items-end">
+                <div class="flex items-baseline gap-1.5">
+                  <span class="font-anton text-4xl sm:text-5xl text-brand-red tracking-tight leading-none">3</span>
+                  <span class="text-xs font-bold text-zinc-500 uppercase">PROJECTS</span>
+                </div>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mt-1">
+                  Analytics &amp; Web Apps
+                </p>
+              </div>
+
+              <div class="w-full h-px bg-zinc-800/80"></div>
+
+              <!-- Stat 3: 3 Certifications -->
+              <div class="flex flex-col items-start lg:items-end">
+                <div class="flex items-baseline gap-1.5">
+                  <span class="font-anton text-4xl sm:text-5xl text-brand-red tracking-tight leading-none">3</span>
+                  <span class="text-xs font-bold text-zinc-500 uppercase">CREDENTIALS</span>
+                </div>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mt-1">
+                  Certifications Earned
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SELECTED PROJECTS (REFERENCE SECTION 2) ==================== -->
+  <section id="projects" class="py-20 border-t border-dark-borderSubtle bg-[#0a0a0d]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header with Right Arrow Link -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4 pb-4 border-b border-zinc-800">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-red flex items-center gap-1.5 mb-2">
+            <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+            PORTFOLIO SHOWCASE
+          </span>
+          <h2 class="font-anton text-3xl sm:text-4xl md:text-5xl tracking-tight text-white uppercase">
+            SELECTED PROJECTS
+          </h2>
+        </div>
+
+        <a href="https://github.com/abhinavkrishnan8129" target="_blank" rel="noopener noreferrer"
+          class="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">
+          <span>VIEW GITHUB REPOSITORIES</span>
+          <i data-lucide="arrow-right"
+            class="w-4 h-4 text-brand-red group-hover:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
+
+      <!-- 3-Column Project Grid (Styled Exactly Like Reference Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Project 01: Sales Data Analytics Dashboard -->
+        <div
+          class="group relative rounded-xl bg-dark-card border border-dark-border hover:border-brand-red/60 transition-all duration-300 flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-950/30">
+          <!-- Thumbnail Graphic -->
+          <div
+            class="relative h-56 bg-gradient-to-br from-zinc-900 to-zinc-950 p-6 flex flex-col justify-between overflow-hidden border-b border-zinc-800/80">
+            <!-- Simulated Dashboard UI in card -->
+            <div
+              class="absolute inset-0 opacity-20 bg-[radial-gradient(#e50914_1px,transparent_1px)] [background-size:16px_16px]">
+            </div>
+
+            <div class="relative z-10 flex items-center justify-between text-xs text-zinc-400">
+              <span
+                class="px-2 py-0.5 rounded bg-zinc-800 border border-zinc-700 font-mono text-[11px] text-zinc-300">EXCEL
+                BI</span>
+              <i data-lucide="bar-chart-2" class="w-5 h-5 text-brand-red"></i>
+            </div>
+
+            <!-- Central visual for Excel Dashboard -->
+            <div class="relative z-10 flex flex-col items-center justify-center my-auto text-center">
+              <div
+                class="p-3.5 rounded-xl bg-zinc-800/80 border border-zinc-700/80 text-brand-red mb-2 group-hover:scale-110 group-hover:text-white group-hover:bg-brand-red transition-all">
+                <i data-lucide="table-properties" class="w-8 h-8"></i>
+              </div>
+              <span class="font-bold text-sm tracking-wider text-zinc-200">SALES ANALYTICS SUITE</span>
+              <span class="text-[11px] text-zinc-400">Pivot Tables • Slicers • KPI Tracking</span>
+            </div>
+
+            <div class="relative z-10 flex justify-between text-[10px] text-zinc-400 font-mono uppercase">
+              <span>Metric: Revenue Trends</span>
+              <span class="text-brand-red font-bold">Interactive</span>
+            </div>
+          </div>
+
+          <!-- Card Body -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-anton text-2xl text-brand-red">01</span>
+                <span class="text-xs font-mono uppercase tracking-widest text-zinc-400">Microsoft Excel</span>
+              </div>
+
+              <h3
+                class="font-bold text-lg text-white group-hover:text-brand-red transition-colors uppercase tracking-wide mb-2">
+                Sales Data Analytics Dashboard
+              </h3>
+
+              <p class="text-xs text-zinc-400 leading-relaxed mb-4">
+                Engineered an interactive sales performance dashboard. Leveraged Pivot Tables, Pivot Charts, dynamic
+                slicers, and descriptive statistics to track multi-category sales trends, product margins, and customer
+                insights.
+              </p>
+
+              <!-- Tags -->
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span
+                  class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">Advanced
+                  Excel</span>
+                <span
+                  class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">Pivot
+                  Tables</span>
+                <span
+                  class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">Data
+                  Visualization</span>
+                <span
+                  class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">KPI
+                  Slicers</span>
+              </div>
+            </div>
+
+            <!-- Footer Action with Dual Buttons for Clients -->
+            <div class="grid grid-cols-2 gap-2 pt-2">
+              <a href="Sales_Data_Analytics_Dashboard.xlsx" download="Sales_Data_Analytics_Dashboard.xlsx"
+                class="py-2.5 px-2 rounded-lg bg-brand-red hover:bg-brand-hover text-white text-[11px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all text-center red-glow"
+                title="Download Excel Spreadsheet with Pivot Tables">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                <span>Download .xlsx</span>
+              </a>
+              <button onclick="openModal('project1')"
+                class="py-2.5 px-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 text-[11px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all text-center">
+                <span>Details</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 02: Medical Doctor Appointment System -->
+        <div
+          class="group relative rounded-xl bg-dark-card border border-dark-border hover:border-brand-red/60 transition-all duration-300 flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-950/30">
+          <!-- Thumbnail Graphic (Interactive Preview) -->
+          <div onclick="openGallery(0, 'doctor')"
+            class="relative h-56 bg-zinc-950 p-6 flex flex-col justify-between overflow-hidden border-b border-zinc-800/80 cursor-pointer group/thumb"
+            title="Click to view full screenshot gallery">
+            <img src="assets/doctor_screenshots/01_landing_patient_onboarding.jpg" alt="Doctor Appointment System Screenshot"
+              class="absolute inset-0 w-full h-full object-cover object-top opacity-50 group-hover/thumb:opacity-75 group-hover/thumb:scale-105 transition-all duration-500" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-black/60 pointer-events-none">
+            </div>
+
+            <div class="relative z-10 flex items-center justify-between text-xs text-zinc-400">
+              <span
+                class="px-2 py-0.5 rounded bg-zinc-900/90 backdrop-blur-md border border-zinc-700 font-mono text-[11px] text-zinc-200">HEALTHCARE_APP</span>
+              <span
+                class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-brand-red/90 text-white text-[10px] font-bold uppercase tracking-wider">
+                <i data-lucide="image" class="w-3 h-3"></i> 8 SCREENSHOTS
+              </span>
+            </div>
+
+            <!-- Central visual hover prompt -->
+            <div class="relative z-10 flex flex-col items-center justify-center my-auto text-center px-4">
+              <div
+                class="p-3 rounded-full bg-black/60 backdrop-blur-md border border-zinc-700/80 text-white mb-2 group-hover/thumb:scale-110 group-hover/thumb:border-brand-red transition-all">
+                <i data-lucide="eye" class="w-5 h-5 text-brand-red"></i>
+              </div>
+              <span class="font-bold text-xs tracking-wider text-zinc-200 uppercase">View 8 App Screenshots</span>
+            </div>
+
+            <div
+              class="relative z-10 flex justify-between text-[10px] text-zinc-400 font-mono uppercase bg-black/40 backdrop-blur-sm px-2 py-1 rounded">
+              <span>Next.js + Tailwind</span>
+              <span class="text-brand-red font-bold">Mar 2026</span>
+            </div>
+          </div>
+
+          <!-- Card Body -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-anton text-2xl text-brand-red">02</span>
+                <span class="text-xs font-mono uppercase tracking-widest text-zinc-400">Web Application</span>
+              </div>
+
+              <h3
+                class="font-bold text-lg text-white group-hover:text-brand-red transition-colors uppercase tracking-wide mb-2">
+                Medical Appointment System
+              </h3>
+
+              <p class="text-xs text-zinc-400 leading-relaxed mb-4">
+                Designed a patient-centered healthcare booking portal with secure user registration, live doctor
+                scheduling, payment status tracking, and automated feedback loops.
+              </p>
+
+              <!-- Tags -->
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span
+                  class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">Next.js</span>
+                <span
+                  class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">React</span>
+                <span
+                  class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">Tailwind
+                  CSS</span>
+                <span
+                  class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">Appwrite</span>
+              </div>
+            </div>
+
+            <!-- Footer Action with Dual Buttons for Clients -->
+            <div class="grid grid-cols-2 gap-2 pt-2">
+              <button onclick="openGallery(0, 'doctor')"
+                class="py-2.5 px-2 rounded-lg bg-brand-red hover:bg-brand-hover text-white text-[11px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all text-center red-glow cursor-pointer"
+                title="Show Screenshots of the Doctor Appointment System">
+                <i data-lucide="image" class="w-3.5 h-3.5"></i>
+                <span>Show Project Images</span>
+              </button>
+              <button onclick="openModal('project2')"
+                class="py-2.5 px-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 text-[11px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all text-center cursor-pointer">
+                <span>Details</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 03: Cinema Booking Website -->
+        <div
+          class="group relative rounded-xl bg-dark-card border border-dark-border hover:border-brand-red/60 transition-all duration-300 flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-950/30">
+          <!-- Thumbnail Graphic -->
+          <div
+            class="relative h-56 bg-gradient-to-br from-zinc-900 to-zinc-950 p-6 flex flex-col justify-between overflow-hidden border-b border-zinc-800/80">
+            <div
+              class="absolute inset-0 opacity-20 bg-[radial-gradient(#e50914_1px,transparent_1px)] [background-size:16px_16px]">
+            </div>
+
+            <div class="relative z-10 flex items-center justify-between text-xs text-zinc-400">
+              <span
+                class="px-2 py-0.5 rounded bg-zinc-800 border border-zinc-700 font-mono text-[11px] text-zinc-300">LIVE
+                PRODUCTION</span>
+              <i data-lucide="clapperboard" class="w-5 h-5 text-brand-red"></i>
+            </div>
+
+            <!-- Central visual -->
+            <div class="relative z-10 flex flex-col items-center justify-center my-auto text-center">
+              <div
+                class="p-3.5 rounded-xl bg-zinc-800/80 border border-zinc-700/80 text-brand-red mb-2 group-hover:scale-110 group-hover:text-white group-hover:bg-brand-red transition-all">
+                <i data-lucide="film" class="w-8 h-8"></i>
+              </div>
+              <span class="font-bold text-sm tracking-wider text-zinc-200">CINEMA BOOKING PLATFORM</span>
+              <span class="text-[11px] text-zinc-400">Movie Catalog • Seat Selection • Tickets</span>
+            </div>
+
+            <div class="relative z-10 flex justify-between text-[10px] text-zinc-400 font-mono uppercase">
+              <span>Deployed on Vercel</span>
+              <span class="text-emerald-400 font-bold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Live Online
+              </span>
+            </div>
+          </div>
+
+          <!-- Card Body -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-anton text-2xl text-brand-red">03</span>
+                <span class="text-xs font-mono uppercase tracking-widest text-zinc-400">Web Application</span>
+              </div>
+
+              <h3
+                class="font-bold text-lg text-white group-hover:text-brand-red transition-colors uppercase tracking-wide mb-2">
+                Cinema Booking Website
+              </h3>
+
+              <p class="text-xs text-zinc-400 leading-relaxed mb-4">
+                Interactive movie reservation and cinema ticketing platform deployed live on Vercel. Features dynamic
+                movie listings, real-time seat reservation layout, showtime scheduling, and seamless checkout flow.
+              </p>
+
+              <!-- Tags -->
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span
+                  class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">React</span>
+                <span
+                  class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">Tailwind
+                  CSS</span>
+                <span
+                  class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">Vercel</span>
+                <span
+                  class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-900 border border-brand-red/40 text-brand-red">Live
+                  Demo</span>
+              </div>
+            </div>
+
+            <!-- Footer Action with Dual Buttons for Clients -->
+            <div class="grid grid-cols-2 gap-2 pt-2">
+              <a href="https://movie-booking-website-drca.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="py-2.5 px-2 rounded-lg bg-brand-red hover:bg-brand-hover text-white text-[11px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all text-center red-glow"
+                title="Open Live Cinema Booking Website">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                <span>Live Site ↗</span>
+              </a>
+              <button onclick="openModal('project3')"
+                class="py-2.5 px-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 text-[11px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all text-center">
+                <span>Details</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Additional 4th Project Banner: Livewire Banking App -->
+      <div
+        class="mt-8 rounded-xl bg-gradient-to-r from-zinc-900 via-dark-card to-zinc-900 border border-zinc-800 p-6 flex flex-col md:flex-row items-center justify-between gap-6 hover:border-zinc-700 transition-all">
+        <div class="flex items-center gap-4">
+          <div
+            class="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red shrink-0">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-mono text-brand-red font-bold">PROJECT 04</span>
+              <span class="text-xs text-zinc-400">• Livewire Internship</span>
+            </div>
+            <h4 class="text-base font-bold text-white uppercase">Desktop Banking & Account Management Solution</h4>
+            <p class="text-xs text-zinc-400">Developed with Python (Tkinter) and persistent file-based storage systems
+              for
+              financial transactions & audit logs.</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 shrink-0">
+          <button onclick="openGallery(0, 'banking')"
+            class="px-5 py-2.5 rounded-lg bg-brand-red hover:bg-brand-hover text-white text-xs font-bold uppercase tracking-wider transition-all red-glow flex items-center gap-2"
+            title="Show Screenshots of the Banking Application Interface">
+            <i data-lucide="image" class="w-4 h-4"></i>
+            <span>Show Project Images</span>
+          </button>
+          <button onclick="openModal('project4')"
+            class="px-5 py-2.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-2">
+            <span>Specifications</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== BENTO GRID: SKILLS, WORK PROCESS & STATEMENT ==================== -->
+  <section id="skills" class="py-20 border-t border-dark-borderSubtle bg-[#08080a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+        <!-- ================= COLUMN 1: EDUCATION & SKILLS (lg:col-span-4) ================= -->
+        <div id="education" class="lg:col-span-4 space-y-8 flex flex-col justify-between">
+
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+              <span class="text-xs font-bold uppercase tracking-widest text-brand-red">FOUNDATIONS</span>
+            </div>
+            <h2 class="font-anton text-2xl sm:text-3xl text-white uppercase tracking-tight mb-6">
+              EDUCATION & SKILLS
+            </h2>
+
+            <!-- Education Timeline -->
+            <div class="space-y-4 mb-8">
+              <span
+                class="text-xs font-bold uppercase tracking-widest text-zinc-400 block border-b border-zinc-800 pb-2">
+                ACADEMIC HISTORY
+              </span>
+
+              <!-- Degree 1 -->
+              <div
+                class="p-4 rounded-xl bg-dark-card border border-dark-border hover:border-zinc-700 transition-colors">
+                <div class="flex justify-between items-start mb-1">
+                  <h4 class="font-bold text-sm text-white">Bachelor of Computer Application (BCA)</h4>
+                  <span class="text-xs font-bold text-brand-red">2023–2026</span>
+                </div>
+                <p class="text-xs text-zinc-400">Koshys Institute of Management Studies — Bangalore</p>
+                <div class="mt-2 flex items-center justify-between text-[11px] text-zinc-400">
+                  <span>Minors: Mathematics & Logic</span>
+                  <span class="font-bold text-zinc-200 bg-zinc-800 px-2 py-0.5 rounded">CGPA: 8.88 / 10</span>
+                </div>
+              </div>
+
+              <!-- Degree 2 -->
+              <div
+                class="p-4 rounded-xl bg-dark-card border border-dark-border hover:border-zinc-700 transition-colors">
+                <div class="flex justify-between items-start mb-1">
+                  <h4 class="font-bold text-sm text-white">Higher Secondary (Commerce)</h4>
+                  <span class="text-xs font-bold text-brand-red">2021–2023</span>
+                </div>
+                <p class="text-xs text-zinc-400">GHSS Madikkai, Kasaragod, Kerala</p>
+                <div class="mt-2 flex items-center justify-end text-[11px]">
+                  <span class="font-bold text-zinc-200 bg-zinc-800 px-2 py-0.5 rounded">Score: 91%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="space-y-3 mb-8">
+              <span
+                class="text-xs font-bold uppercase tracking-widest text-zinc-400 block border-b border-zinc-800 pb-2">
+                CERTIFICATIONS
+              </span>
+              <ul class="space-y-2 text-xs text-zinc-300">
+                <li class="flex items-center gap-2">
+                  <i data-lucide="award" class="w-4 h-4 text-brand-red shrink-0"></i>
+                  <span><strong>YUVA AI For All</strong> — MeitY (Govt. of India)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="award" class="w-4 h-4 text-brand-red shrink-0"></i>
+                  <span><strong>Advanced Excel</strong> — Coursera</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="award" class="w-4 h-4 text-brand-red shrink-0"></i>
+                  <span><strong>AWS & Forage</strong> — Job Simulation Certificate</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="award" class="w-4 h-4 text-brand-red shrink-0"></i>
+                  <span><strong>AI Tools Workshop</strong> — Be10x</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Skills Badges Grid -->
+          <div>
+            <div class="flex justify-between items-center border-b border-zinc-800 pb-2 mb-3">
+              <span class="text-xs font-bold uppercase tracking-widest text-zinc-400">
+                TECHNICAL SKILLS
+              </span>
+              <span class="text-[10px] text-brand-red font-mono">16+ PROFICIENCIES</span>
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-200 hover:border-brand-red transition-colors">Python</span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-200 hover:border-brand-red transition-colors">SQL</span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-200 hover:border-brand-red transition-colors">Power
+                BI</span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-900 border border-brand-red/60 text-brand-red text-xs font-bold">Advanced
+                Excel</span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-200 hover:border-brand-red transition-colors">Data
+                Cleaning</span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-200 hover:border-brand-red transition-colors">Next.js</span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-200 hover:border-brand-red transition-colors">React</span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-200 hover:border-brand-red transition-colors">Tailwind
+                CSS</span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-200 hover:border-brand-red transition-colors">Pandas</span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-200 hover:border-brand-red transition-colors">Matplotlib</span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-200 hover:border-brand-red transition-colors">Appwrite</span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-200 hover:border-brand-red transition-colors">Java</span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-200 hover:border-brand-red transition-colors">C
+                / R</span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-200 hover:border-brand-red transition-colors">Git
+                & GitHub</span>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- ================= COLUMN 2: WORK PROCESS (lg:col-span-4) ================= -->
+        <div id="process" class="lg:col-span-4 space-y-6">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+            <span class="text-xs font-bold uppercase tracking-widest text-brand-red">METHODOLOGY</span>
+          </div>
+          <h2 class="font-anton text-2xl sm:text-3xl text-white uppercase tracking-tight mb-6">
+            WORK PROCESS
+          </h2>
+
+          <!-- Vertical Connected Pipeline (Exact Match to Reference Section) -->
+          <div
+            class="relative pl-8 space-y-8 before:absolute before:left-3.5 before:top-3 before:bottom-3 before:w-0.5 before:bg-gradient-to-b before:from-brand-red before:via-brand-red/60 before:to-zinc-800">
+
+            <!-- Step 01 -->
+            <div class="relative group">
+              <!-- Numbered Step Node -->
+              <div
+                class="absolute -left-8 top-0 w-7 h-7 rounded-full bg-dark-card border-2 border-brand-red flex items-center justify-center text-[10px] font-bold text-white shadow-lg group-hover:scale-110 group-hover:bg-brand-red transition-all">
+                01
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold uppercase tracking-wider text-brand-red">DISCOVER & UNDERSTAND</span>
+                  <i data-lucide="search" class="w-3.5 h-3.5 text-zinc-400"></i>
+                </div>
+                <h4 class="text-sm font-semibold text-white">Requirement & Data Scoping</h4>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                  Deeply understanding stakeholder goals, key performance indicators (KPIs), raw data formats, and user
+                  needs.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 02 -->
+            <div class="relative group">
+              <div
+                class="absolute -left-8 top-0 w-7 h-7 rounded-full bg-dark-card border-2 border-brand-red flex items-center justify-center text-[10px] font-bold text-white shadow-lg group-hover:scale-110 group-hover:bg-brand-red transition-all">
+                02
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold uppercase tracking-wider text-brand-red">CLEAN & STRUCTURE</span>
+                  <i data-lucide="filter" class="w-3.5 h-3.5 text-zinc-400"></i>
+                </div>
+                <h4 class="text-sm font-semibold text-white">Data Wrangling & Normalization</h4>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                  Removing duplicates, treating missing values, structuring relational tables, and ensuring pristine
+                  data integrity.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="relative group">
+              <div
+                class="absolute -left-8 top-0 w-7 h-7 rounded-full bg-dark-card border-2 border-brand-red flex items-center justify-center text-[10px] font-bold text-white shadow-lg group-hover:scale-110 group-hover:bg-brand-red transition-all">
+                03
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold uppercase tracking-wider text-brand-red">ANALYZE & MODEL</span>
+                  <i data-lucide="calculator" class="w-3.5 h-3.5 text-zinc-400"></i>
+                </div>
+                <h4 class="text-sm font-semibold text-white">Statistical Trend Extraction</h4>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                  Applying SQL queries, descriptive statistics, and Python analytics to isolate patterns and key
+                  performance drivers.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="relative group">
+              <div
+                class="absolute -left-8 top-0 w-7 h-7 rounded-full bg-dark-card border-2 border-brand-red flex items-center justify-center text-[10px] font-bold text-white shadow-lg group-hover:scale-110 group-hover:bg-brand-red transition-all">
+                04
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold uppercase tracking-wider text-brand-red">BUILD & VISUALIZE</span>
+                  <i data-lucide="layout-dashboard" class="w-3.5 h-3.5 text-zinc-400"></i>
+                </div>
+                <h4 class="text-sm font-semibold text-white">Dashboards & App Interfaces</h4>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                  Crafting interactive Excel / Power BI dashboards or responsive Next.js frontends designed for smooth
+                  decision-making.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 05 -->
+            <div class="relative group">
+              <div
+                class="absolute -left-8 top-0 w-7 h-7 rounded-full bg-dark-card border-2 border-brand-red flex items-center justify-center text-[10px] font-bold text-white shadow-lg group-hover:scale-110 group-hover:bg-brand-red transition-all">
+                05
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold uppercase tracking-wider text-brand-red">DELIVER & OPTIMIZE</span>
+                  <i data-lucide="send" class="w-3.5 h-3.5 text-zinc-400"></i>
+                </div>
+                <h4 class="text-sm font-semibold text-white">Presentation & Refinement</h4>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                  Rigorous testing, validation with stakeholders, actionable summary reporting, and ongoing
+                  optimization.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- ================= COLUMN 3: RED STATEMENT CARD (lg:col-span-4) ================= -->
+        <!-- Exact match to the reference image right crimson card with quotes & signature -->
+        <div class="lg:col-span-4 flex flex-col">
+          <div
+            class="relative flex-1 rounded-2xl bg-gradient-to-b from-[#a10e16] via-[#7d0b11] to-[#3a0306] p-8 sm:p-10 text-white flex flex-col justify-between shadow-2xl overflow-hidden border border-red-500/30 red-glow">
+
+            <!-- Background Watermark Quotation Mark -->
+            <div
+              class="absolute top-2 right-4 text-[120px] font-serif leading-none opacity-20 select-none pointer-events-none">
+              “
+            </div>
+
+            <!-- Top quote symbol -->
+            <div class="relative z-10">
+              <div class="w-12 h-12 rounded-xl bg-black/20 backdrop-blur-sm flex items-center justify-center mb-6">
+                <i data-lucide="quote" class="w-6 h-6 text-white"></i>
+              </div>
+
+              <!-- Quote Body -->
+              <p class="text-xl sm:text-2xl font-bold leading-snug tracking-tight mb-4">
+                "Without data, you're just another person with an opinion. Good software turns data into clear,
+                unmistakable action."
+              </p>
+
+              <p class="text-xs text-red-200/90 leading-relaxed">
+                Passionate about joining teams where data analytics, rigor, and proactive application development drive
+                measurable organizational growth.
+              </p>
+            </div>
+
+            <!-- Bottom Signature & CTA -->
+            <div class="relative z-10 pt-8 mt-8 border-t border-red-400/30 space-y-4">
+              <!-- Signature in cursive script font -->
+              <div class="flex flex-col">
+                <span class="font-caveat text-4xl text-white font-bold tracking-wider">
+                  Abhinavkrishnan
+                </span>
+                <span class="text-[11px] font-bold uppercase tracking-widest text-red-200">
+                  ABHINAVKRISHNAN M
+                </span>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-black/30 backdrop-blur-sm border border-red-400/20 text-center">
+                <span
+                  class="text-xs font-extrabold uppercase tracking-widest text-white flex items-center justify-center gap-2">
+                  <i data-lucide="sparkle" class="w-3.5 h-3.5 fill-white"></i>
+                  LET'S BUILD SOMETHING GREAT
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== LET'S WORK TOGETHER (REFERENCE CONTACT SECTION) ==================== -->
+  <section id="contact" class="py-24 border-t border-dark-borderSubtle bg-[#0a0a0d] relative overflow-hidden">
+
+    <!-- Background accent glow -->
+    <div
+      class="absolute bottom-0 left-1/4 w-[600px] h-[300px] bg-red-600/10 rounded-full blur-[150px] pointer-events-none">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <!-- Section Title -->
+      <div class="mb-12">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-red">GET IN TOUCH</span>
+        </div>
+        <h2 class="font-anton text-4xl sm:text-5xl md:text-6xl text-white uppercase tracking-tight">
+          LET'S WORK TOGETHER
+        </h2>
+        <p class="text-sm sm:text-base text-zinc-400 max-w-xl mt-3">
+          I'm currently open for full-time Data Analyst, Business Intelligence, and Developer positions as well as
+          selective freelance opportunities.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Left: Quick Direct Contact Cards (lg:col-span-6) -->
+        <div class="lg:col-span-6 space-y-4">
+
+          <!-- Email Card with Copy Button -->
+          <div
+            class="p-5 rounded-xl bg-dark-card border border-dark-border hover:border-brand-red/50 transition-all flex items-center justify-between group">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-brand-red group-hover:scale-105 transition-transform">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-[11px] font-mono text-zinc-400 uppercase">Direct Email</p>
+                <a href="mailto:abhinavkrishnan8129@gmail.com"
+                  class="text-sm font-bold text-white hover:text-brand-red transition-colors">
+                  abhinavkrishnan8129@gmail.com
+                </a>
+              </div>
+            </div>
+            <button onclick="copyToClipboard('abhinavkrishnan8129@gmail.com', 'Email copied!')"
+              class="p-2.5 rounded-lg bg-zinc-900 hover:bg-brand-red text-zinc-300 hover:text-white border border-zinc-800 transition-colors"
+              title="Copy Email">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- Phone Card -->
+          <div
+            class="p-5 rounded-xl bg-dark-card border border-dark-border hover:border-brand-red/50 transition-all flex items-center justify-between group">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-brand-red group-hover:scale-105 transition-transform">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-[11px] font-mono text-zinc-400 uppercase">Phone / WhatsApp</p>
+                <a href="tel:+918129291513" class="text-sm font-bold text-white hover:text-brand-red transition-colors">
+                  +91 8129291513
+                </a>
+              </div>
+            </div>
+            <button onclick="copyToClipboard('+918129291513', 'Phone copied!')"
+              class="p-2.5 rounded-lg bg-zinc-900 hover:bg-brand-red text-zinc-300 hover:text-white border border-zinc-800 transition-colors"
+              title="Copy Phone">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- LinkedIn Card -->
+          <a href="https://linkedin.com/in/abhinavkrishnan812929" target="_blank" rel="noopener noreferrer"
+            class="p-5 rounded-xl bg-dark-card border border-dark-border hover:border-brand-red/50 transition-all flex items-center justify-between group block">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-brand-red group-hover:scale-105 transition-transform">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-[11px] font-mono text-zinc-400 uppercase">LinkedIn Profile</p>
+                <span class="text-sm font-bold text-white group-hover:text-brand-red transition-colors">
+                  linkedin.com/in/abhinavkrishnan812929
+                </span>
+              </div>
+            </div>
+            <div class="p-2.5 text-zinc-400 group-hover:text-brand-red group-hover:translate-x-1 transition-all">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+            </div>
+          </a>
+
+          <!-- GitHub Card -->
+          <a href="https://github.com/abhinavkrishnan8129" target="_blank" rel="noopener noreferrer"
+            class="p-5 rounded-xl bg-dark-card border border-dark-border hover:border-brand-red/50 transition-all flex items-center justify-between group block">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-brand-red group-hover:scale-105 transition-transform">
+                <i data-lucide="github" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-[11px] font-mono text-zinc-400 uppercase">GitHub Repository</p>
+                <span class="text-sm font-bold text-white group-hover:text-brand-red transition-colors">
+                  github.com/abhinavkrishnan8129
+                </span>
+              </div>
+            </div>
+            <div class="p-2.5 text-zinc-400 group-hover:text-brand-red group-hover:translate-x-1 transition-all">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+            </div>
+          </a>
+
+          <!-- Location & Language Info Card -->
+          <div
+            class="p-5 rounded-xl bg-zinc-950 border border-zinc-800 flex flex-wrap items-center justify-between gap-4 text-xs text-zinc-400">
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-red"></i>
+              <span>Kerala, Kasaragod - 671531, India</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="languages" class="w-4 h-4 text-brand-red"></i>
+              <span>English,Malayalam - Fluent,Hindi,Tamil - Basic Fluency </span>
+            </div>
+          </div>
+
+          <!-- Direct Resume Download Action Box -->
+          <div class="p-6 rounded-xl bg-gradient-to-r from-zinc-900 to-dark-card border border-zinc-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-white flex items-center gap-2">
+                <i data-lucide="file-check" class="w-4 h-4 text-brand-red"></i>
+                VERIFIED RESUME DOWNLOADS
+              </span>
+              <span class="text-[10px] text-emerald-400 font-mono">UPDATED 2026</span>
+            </div>
+            <p class="text-xs text-zinc-400">
+              Download the ATS-formatted resume optimized for recruiter screening systems or the comprehensive full CV.
+            </p>
+            <div class="flex flex-wrap gap-3 pt-1">
+              <a href="ABHINAVKRISHNAN_ATS_Resume.pdf" download="ABHINAVKRISHNAN_ATS_Resume.pdf"
+                class="flex-1 min-w-[180px] py-2.5 px-4 rounded-lg bg-brand-red hover:bg-brand-hover text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all red-glow">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                <span>ATS Resume (PDF)</span>
+              </a>
+              <a href="Abhinavkrishnan_CV.pdf" download="Abhinavkrishnan_CV.pdf"
+                class="flex-1 min-w-[180px] py-2.5 px-4 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
+                <i data-lucide="file-text" class="w-3.5 h-3.5 text-brand-red"></i>
+                <span>Standard CV (PDF)</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Interactive Direct Message Form (lg:col-span-6) -->
+        <div class="lg:col-span-6 bg-dark-card border border-dark-border rounded-2xl p-6 sm:p-8">
+          <h3 class="font-anton text-2xl text-white uppercase tracking-tight mb-1">
+            SEND A DIRECT MESSAGE
+          </h3>
+          <p class="text-xs text-zinc-400 mb-6">
+            Fill out the form below to initiate an email directly to Abhinavkrishnan.
+          </p>
+
+          <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono uppercase text-zinc-400 mb-1.5">Your Name</label>
+                <input type="text" id="senderName" required placeholder="John Doe"
+                  class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red transition-colors placeholder:text-zinc-600" />
+              </div>
+              <div>
+                <label class="block text-xs font-mono uppercase text-zinc-400 mb-1.5">Your Email</label>
+                <input type="email" id="senderEmail" required placeholder="john@example.com"
+                  class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red transition-colors placeholder:text-zinc-600" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono uppercase text-zinc-400 mb-1.5">Subject / Opportunity</label>
+              <input type="text" id="subject" required placeholder="Full-time Role / Data Analytics Project"
+                class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red transition-colors placeholder:text-zinc-600" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono uppercase text-zinc-400 mb-1.5">Message</label>
+              <textarea id="message" rows="4" required
+                placeholder="Hi Abhinav, we reviewed your portfolio and would like to discuss..."
+                class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-red transition-colors placeholder:text-zinc-600 resize-none"></textarea>
+            </div>
+
+            <button type="submit"
+              class="w-full py-3.5 rounded-lg bg-brand-red hover:bg-brand-hover text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-all red-glow flex items-center justify-center gap-2">
+              <span>Send Message</span>
+              <i data-lucide="send" class="w-4 h-4"></i>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-12 border-t border-zinc-900 bg-[#060608] text-xs text-zinc-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+        <span class="font-bold text-white tracking-wider">ABHINAVKRISHNAN M</span>
+        <span>• BCA Graduate & Data Analyst</span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="#hero" class="hover:text-white transition-colors">Home</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+        <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+        <a href="#process" class="hover:text-white transition-colors">Process</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </div>
+
+      <p class="text-zinc-400">
+        ABHINAVKRISHNAN M © 2026
+      </p>
+
+    </div>
+  </footer>
+
+
+  <!-- ==================== PROJECT DETAIL MODAL ==================== -->
+  <div id="projectModal"
+    class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div
+      class="bg-dark-card border border-zinc-700 max-w-2xl w-full rounded-2xl p-6 sm:p-8 relative shadow-2xl overflow-y-auto max-h-[90vh]">
+      <!-- Close button -->
+      <button onclick="closeModal()"
+        class="absolute top-5 right-5 p-2 rounded-lg bg-zinc-800 hover:bg-brand-red text-zinc-300 hover:text-white transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div id="modalContent">
+        <!-- Dynamically injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== SCREENSHOT GALLERY MODAL ==================== -->
+  <div id="galleryModal"
+    class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md flex flex-col justify-between p-4 sm:p-6 overflow-hidden">
+
+    <!-- Gallery Top Bar -->
+    <div class="max-w-7xl w-full mx-auto flex items-center justify-between pb-3 border-b border-zinc-800 shrink-0">
+      <div class="flex items-center gap-3">
+        <span class="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse"></span>
+        <h3 id="galleryProjectTitle" class="font-anton text-lg sm:text-xl text-white uppercase tracking-wide">
+          Livewire Banking Application — Project Screenshots
+        </h3>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="text-xs font-mono text-zinc-400">
+          <span id="galleryCurrentNum" class="text-brand-red font-bold">1</span> / <span id="galleryTotalNum">10</span>
+        </span>
+        <button onclick="closeGallery()"
+          class="p-2 rounded-lg bg-zinc-900 hover:bg-brand-red text-zinc-300 hover:text-white border border-zinc-800 transition-colors cursor-pointer"
+          title="Close Gallery (Esc)">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Gallery Stage -->
+    <div
+      class="relative flex-1 flex items-center justify-between max-w-7xl w-full mx-auto my-2 overflow-hidden px-2 sm:px-4">
+
+      <!-- Prev Button -->
+      <button id="galleryPrevBtn" onclick="prevGalleryImage()"
+        class="p-3 sm:p-4 rounded-full bg-zinc-900/90 hover:bg-brand-red text-white border border-zinc-700 transition-all red-glow shrink-0 z-20 cursor-pointer"
+        title="Previous Screenshot (Left Arrow)">
+        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+      </button>
+
+      <!-- Center Image & Caption -->
+      <div class="flex-1 flex flex-col items-center justify-center px-2 sm:px-6 max-h-full overflow-hidden">
+        <div
+          class="relative max-h-[58vh] sm:max-h-[62vh] rounded-xl overflow-hidden border border-zinc-800 bg-zinc-950 shadow-2xl flex items-center justify-center">
+          <img id="galleryMainImg" src="assets/banking_screenshots/01_main_menu.jpg" alt="Project Screenshot"
+            class="max-h-[58vh] sm:max-h-[62vh] w-auto max-w-full object-contain mx-auto" />
+        </div>
+        <div class="mt-3 text-center">
+          <h4 id="galleryImgTitle" class="text-sm sm:text-base font-bold text-white tracking-wide"></h4>
+          <p id="galleryImgDesc" class="text-xs text-zinc-400 mt-1 max-w-2xl mx-auto"></p>
+        </div>
+      </div>
+
+      <!-- Next Button -->
+      <button id="galleryNextBtn" onclick="nextGalleryImage()"
+        class="p-3 sm:p-4 rounded-full bg-zinc-900/90 hover:bg-brand-red text-white border border-zinc-700 transition-all red-glow shrink-0 z-20 cursor-pointer"
+        title="Next Screenshot (Right Arrow)">
+        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Thumbnail Strip -->
+    <div class="max-w-7xl w-full mx-auto pt-3 border-t border-zinc-800 shrink-0">
+      <div id="galleryThumbnails" class="flex gap-2.5 overflow-x-auto pb-1">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== TOAST NOTIFICATION ==================== -->
+  <div id="toast"
+    class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-zinc-900 border border-brand-red text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3">
+    <i data-lucide="check-circle" class="w-5 h-5 text-brand-red"></i>
+    <span id="toastMsg" class="text-xs font-semibold">Copied!</span>
+  </div>
+
+
+  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking any link
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Project Modals Data
+    const projectDetails = {
+      project1: {
+        number: '01',
+        title: 'Sales Data Analytics Dashboard',
+        subtitle: 'Advanced Microsoft Excel Business Intelligence',
+        overview: 'Developed an interactive multi-category sales dashboard that consolidates transaction data, tracks KPIs, and provides dynamic slicing for business intelligence reporting.',
+        bullets: [
+          'Implemented advanced Pivot Tables and Pivot Charts to identify month-over-month growth patterns and revenue contributors.',
+          'Built custom interactive slicers and timeline filters for swift cross-category comparisons.',
+          'Formulated complex Excel functions (XLOOKUP, INDEX/MATCH, nested IFs, SUMIFS, and statistical variance calculation).',
+          'Delivered clean visual data cards tracking Total Sales, Margin %, Top Performing Products, and Regional Performance.'
+        ],
+        tags: ['Microsoft Excel', 'Pivot Charts', 'Data Cleaning', 'Dashboard Development', 'Descriptive Statistics'],
+        clientAction: {
+          label: 'Download Live Excel (.xlsx)',
+          url: 'Sales_Data_Analytics_Dashboard.xlsx',
+          download: 'Sales_Data_Analytics_Dashboard.xlsx',
+          icon: 'download'
+        }
+      },
+      project2: {
+        number: '02',
+        title: 'Medical Doctor Appointment System',
+        subtitle: 'Full-Stack Modern Healthcare Web Application (March 2026)',
+        overview: 'An end-to-end patient scheduling and hospital management web application designed for fast, frictionless clinical booking.',
+        bullets: [
+          'Engineered responsive appointment booking interface using Next.js, React, and Tailwind CSS.',
+          'Integrated Appwrite Cloud backend for secure user registration, session management, and document storage.',
+          'Implemented doctor availability schedules, automated confirmation tracking, and patient feedback mechanisms.',
+          'Optimized layout for mobile accessibility and fast client-side rendering.'
+        ],
+        tags: ['Next.js', 'React', 'Tailwind CSS', 'Appwrite Cloud', 'REST APIs'],
+        clientAction: {
+          label: 'Show Project Images',
+          onclick: "closeModal(); openGallery(0, 'doctor')",
+          icon: 'image'
+        }
+      },
+      project3: {
+        number: '03',
+        title: 'Cinema Booking Website',
+        subtitle: 'Live Interactive Web Application (Deployed on Vercel)',
+        overview: 'An end-to-end interactive cinema and movie reservation web platform. Allows users to browse currently screening films, check showtimes, select specific seats with real-time visual feedback, and reserve tickets seamlessly.',
+        bullets: [
+          'Engineered interactive movie browsing interface with detailed movie overviews, posters, and category filtering.',
+          'Designed dynamic theater seat-selection grid allowing users to choose seats and track availability in real-time.',
+          'Implemented seamless booking workflows with showtime picker and instant price calculations.',
+          'Deployed live in production on Vercel with high performance, fast load times, and full mobile responsiveness.'
+        ],
+        tags: ['React', 'Next.js', 'Tailwind CSS', 'Vercel Deployment', 'UI/UX Design', 'JavaScript'],
+        clientAction: {
+          label: 'Open Live Cinema Website ↗',
+          url: 'https://movie-booking-website-drca.vercel.app/',
+          download: null,
+          icon: 'external-link'
+        }
+      },
+      project4: {
+        number: '04',
+        title: 'Desktop Banking & Account Management App',
+        subtitle: 'Livewire Internship Project (Python & Tkinter)',
+        overview: 'A full-featured desktop financial banking software built in Python during an internship at Livewire Solutions. Features interactive GUI screens for customer account creation, debit/credit processing, PIN authorization, and persistent ledger auditing.',
+        bullets: [
+          'Engineered interactive desktop GUI with Tkinter featuring multi-window navigation, customized buttons, and image widgets.',
+          'Built persistent file-based ledger storage architecture that automatically logs timestamped transaction statements.',
+          'Implemented core financial logic: account generation, PIN security checks, deposit/withdrawal validation, and overdraft prevention.',
+          'Packaged with 10+ preloaded sample test accounts, transaction records, and GUI graphics in the downloadable bundle.'
+        ],
+        tags: ['Python', 'Tkinter GUI', 'File Storage System', 'Desktop Software', 'Livewire Internship'],
+        clientAction: {
+          label: 'Show Project Images',
+          onclick: "closeModal(); openGallery(0, 'banking')",
+          icon: 'image'
+        }
+      }
+    };
+
+    function openModal(projectId) {
+      const p = projectDetails[projectId];
+      if (!p) return;
+
+      const html = `
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="font-anton text-2xl text-brand-red">${p.number}</span>
+            <span class="text-xs font-mono text-zinc-400 uppercase tracking-wider">${p.subtitle}</span>
+          </div>
+
+          <h3 class="font-anton text-2xl sm:text-3xl text-white uppercase tracking-tight">${p.title}</h3>
+          
+          <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">${p.overview}</p>
+
+          <div class="space-y-2 pt-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-brand-red">Key Deliverables & Highlights:</h4>
+            <ul class="space-y-1.5 text-xs text-zinc-300">
+              ${p.bullets.map(b => `<li class="flex items-start gap-2"><span class="text-brand-red font-bold">•</span><span>${b}</span></li>`).join('')}
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-zinc-800">
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              ${p.tags.map(t => `<span class="text-[11px] px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">${t}</span>`).join('')}
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+              <div class="flex flex-wrap gap-2">
+                ${p.clientAction ? `
+                  ${p.clientAction.onclick ? `
+                    <button onclick="${p.clientAction.onclick}" class="px-4 py-2 rounded-lg bg-brand-red hover:bg-brand-hover text-white text-xs font-bold uppercase tracking-wider transition-all red-glow inline-flex items-center gap-1.5 cursor-pointer">
+                      <i data-lucide="${p.clientAction.icon}" class="w-3.5 h-3.5"></i>
+                      <span>${p.clientAction.label}</span>
+                    </button>
+                  ` : `
+                    <a href="${p.clientAction.url}" ${p.clientAction.download ? `download="${p.clientAction.download}"` : `target="_blank" rel="noopener noreferrer"`} class="px-4 py-2 rounded-lg bg-brand-red hover:bg-brand-hover text-white text-xs font-bold uppercase tracking-wider transition-all red-glow inline-flex items-center gap-1.5">
+                      <i data-lucide="${p.clientAction.icon}" class="w-3.5 h-3.5"></i>
+                      <span>${p.clientAction.label}</span>
+                    </a>
+                  `}
+                ` : ''}
+                <a href="https://github.com/abhinavkrishnan8129" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-700 text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-1.5">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+              <button onclick="closeModal()" class="px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-xs font-bold uppercase tracking-wider transition-colors">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('modalContent').innerHTML = html;
+      document.getElementById('projectModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeModal() {
+      document.getElementById('projectModal').classList.add('hidden');
+    }
+
+    // ==================== MULTI-PROJECT SCREENSHOT GALLERIES ====================
+    const projectGalleries = {
+      doctor: {
+        title: 'CarePulse Doctor Appointment System — Application Screenshots',
+        items: [
+          {
+            src: 'assets/doctor_screenshots/01_landing_patient_onboarding.jpg',
+            title: '01. Patient Onboarding & Quick Sign-In Portal',
+            desc: 'Clean entry screen capturing patient full name, email address, and phone number for immediate session start.'
+          },
+          {
+            src: 'assets/doctor_screenshots/02_patient_registration_profile.jpg',
+            title: '02. Detailed Patient Medical Registration Form',
+            desc: 'Comprehensive patient profile registration capturing birth date, gender, address, occupation, and emergency contact details.'
+          },
+          {
+            src: 'assets/doctor_screenshots/03_find_doctor_directory.jpg',
+            title: '03. Find Your Doctor Directory & Specialty Grid',
+            desc: 'Live physician directory categorized by specialty (Cardiology, Dental, Dermatology, Orthopedics, Pediatrics, Neurology) with patient review ratings.'
+          },
+          {
+            src: 'assets/doctor_screenshots/04_book_appointment_modal.jpg',
+            title: '04. Interactive Appointment Reservation Modal',
+            desc: 'Direct booking scheduler dialog for selecting appointment date/time, providing visit reasons, and attaching symptom notes.'
+          },
+          {
+            src: 'assets/doctor_screenshots/05_my_appointments_tracker.jpg',
+            title: '05. Patient Appointments & Real-Time Status Hub',
+            desc: 'Patient management dashboard tracking appointment status (Ready, Missed, Rejected) with instant Pay Now settlement buttons.'
+          },
+          {
+            src: 'assets/doctor_screenshots/06_patient_feedback_ratings.jpg',
+            title: '06. Patient Feedback & 5-Star Experience Rating',
+            desc: 'Post-consultation feedback module allowing patients to submit star ratings and detailed care experience reviews.'
+          },
+          {
+            src: 'assets/doctor_screenshots/07_admin_access_verification.jpg',
+            title: '07. Admin Security Gate & Passkey Verification',
+            desc: 'Protected modal layer requiring multi-digit admin passkey authorization before accessing hospital management tools.'
+          },
+          {
+            src: 'assets/doctor_screenshots/08_admin_healthcare_dashboard.jpg',
+            title: '08. CarePulse Executive Admin Management Dashboard',
+            desc: 'Central hospital dashboard tracking total scheduled, pending, and cancelled appointments with full doctor status controls.'
+          }
+        ]
+      },
+      banking: {
+        title: 'Livewire Banking Application — Project Screenshots',
+        items: [
+          {
+            src: 'assets/banking_screenshots/01_main_menu.jpg',
+            title: '01. Welcome & Main Menu Interface',
+            desc: 'Landing interface developed with custom currency backdrop, featuring Login, Create New Account, and Exit options.'
+          },
+          {
+            src: 'assets/banking_screenshots/02_account_created.jpg',
+            title: '02. New Account Created Notification',
+            desc: 'Interactive modal pop-up generating and displaying a unique 4-digit Account Number (e.g., 1033) for newly registered customers.'
+          },
+          {
+            src: 'assets/banking_screenshots/03_login.png',
+            title: '03. User Login & PIN Authentication Screen',
+            desc: 'Login form capturing Customer Name, Account Number, and masked PIN for credential authorization.'
+          },
+          {
+            src: 'assets/banking_screenshots/04_create_account.png',
+            title: '04. Account Registration Input Form',
+            desc: 'Form inputs collecting customer name, initial opening deposit amount, and desired security PIN.'
+          },
+          {
+            src: 'assets/banking_screenshots/05_dashboard.png',
+            title: '05. Customer Banking Dashboard',
+            desc: 'Main authenticated hub providing options to Credit Amount, Debit Amount, Check Balance, View Transaction History, or Logout.'
+          },
+          {
+            src: 'assets/banking_screenshots/06_check_balance.png',
+            title: '06. Real-Time Balance Inquiry Dialog',
+            desc: 'Reads current account balance directly from the persistent storage file and presents it in a clean alert box.'
+          },
+          {
+            src: 'assets/banking_screenshots/07_credit_amount.png',
+            title: '07. Deposit / Credit Funds Window',
+            desc: 'Transaction interface for entering credit amounts to deposit into the active bank account.'
+          },
+          {
+            src: 'assets/banking_screenshots/08_credit_success.png',
+            title: '08. Deposit Success Notification',
+            desc: 'Instant user feedback confirming successful fund credit and automatic balance update in the ledger.'
+          },
+          {
+            src: 'assets/banking_screenshots/09_debit_amount.png',
+            title: '09. Debit / Withdrawal Processing',
+            desc: 'Withdrawal screen with built-in validation to check sufficient funds and prevent account overdrafts.'
+          },
+          {
+            src: 'assets/banking_screenshots/10_transaction_history.png',
+            title: '10. Detailed Transaction Ledger Statement',
+            desc: 'Statement window retrieving formatted timestamps, credits, debits, and running balances from the account record file.'
+          }
+        ]
+      }
+    };
+
+    let activeGalleryKey = 'doctor';
+    let currentGalleryIndex = 0;
+
+    function openGallery(index = 0, galleryKey = 'banking') {
+      activeGalleryKey = galleryKey;
+      currentGalleryIndex = index;
+      renderGallery();
+      document.getElementById('galleryModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+
+    function closeGallery() {
+      document.getElementById('galleryModal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function renderGallery() {
+      const gallery = projectGalleries[activeGalleryKey] || projectGalleries.banking;
+      const screenshots = gallery.items;
+      if (currentGalleryIndex >= screenshots.length) currentGalleryIndex = 0;
+      const item = screenshots[currentGalleryIndex];
+
+      const titleEl = document.getElementById('galleryProjectTitle');
+      if (titleEl) titleEl.textContent = gallery.title;
+
+      document.getElementById('galleryMainImg').src = item.src;
+      document.getElementById('galleryImgTitle').textContent = item.title;
+      document.getElementById('galleryImgDesc').textContent = item.desc;
+      document.getElementById('galleryCurrentNum').textContent = currentGalleryIndex + 1;
+
+      const totalEl = document.getElementById('galleryTotalNum');
+      if (totalEl) totalEl.textContent = screenshots.length;
+
+      // Render thumbnails
+      const thumbsContainer = document.getElementById('galleryThumbnails');
+      if (thumbsContainer) {
+        if (screenshots.length > 1) {
+          thumbsContainer.parentElement.classList.remove('hidden');
+          thumbsContainer.innerHTML = screenshots.map((shot, idx) => `
+            <button onclick="openGallery(${idx}, '${activeGalleryKey}')" class="shrink-0 w-16 h-12 sm:w-20 sm:h-14 rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${idx === currentGalleryIndex ? 'border-brand-red scale-105 shadow-md shadow-red-900/50' : 'border-zinc-800 opacity-60 hover:opacity-100'}">
+              <img src="${shot.src}" alt="thumb ${idx + 1}" class="w-full h-full object-cover" />
+            </button>
+          `).join('');
+        } else {
+          thumbsContainer.parentElement.classList.add('hidden');
+        }
+      }
+
+      // Prev / Next button visibility
+      const prevBtn = document.getElementById('galleryPrevBtn');
+      const nextBtn = document.getElementById('galleryNextBtn');
+      if (prevBtn && nextBtn) {
+        if (screenshots.length <= 1) {
+          prevBtn.classList.add('invisible');
+          nextBtn.classList.add('invisible');
+        } else {
+          prevBtn.classList.remove('invisible');
+          nextBtn.classList.remove('invisible');
+        }
+      }
+
+      lucide.createIcons();
+    }
+
+    function prevGalleryImage() {
+      const screenshots = (projectGalleries[activeGalleryKey] || projectGalleries.banking).items;
+      if (screenshots.length <= 1) return;
+      currentGalleryIndex = (currentGalleryIndex - 1 + screenshots.length) % screenshots.length;
+      renderGallery();
+    }
+
+    function nextGalleryImage() {
+      const screenshots = (projectGalleries[activeGalleryKey] || projectGalleries.banking).items;
+      if (screenshots.length <= 1) return;
+      currentGalleryIndex = (currentGalleryIndex + 1) % screenshots.length;
+      renderGallery();
+    }
+
+    // Keyboard navigation (Arrow keys + Escape)
+    document.addEventListener('keydown', (e) => {
+      const gallery = document.getElementById('galleryModal');
+      const projModal = document.getElementById('projectModal');
+
+      if (gallery && !gallery.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeGallery();
+        if (e.key === 'ArrowLeft') prevGalleryImage();
+        if (e.key === 'ArrowRight') nextGalleryImage();
+      } else if (projModal && !projModal.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeModal();
+      }
+    });
+
+    // Copy to Clipboard Utility
+    function copyToClipboard(text, msg) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(msg);
+        triggerConfetti();
+      });
+    }
+
+    // Toast Notification
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3000);
+    }
+
+    // Confetti celebration
+    function triggerConfetti() {
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 40,
+          spread: 60,
+          origin: { y: 0.85 },
+          colors: ['#e50914', '#ffffff', '#ff4d5a']
+        });
+      }
+    }
+
+    // Resume Download Fallback
+    function downloadResume() {
+      // Direct prompt / opening
+      const atsResumeUrl = 'ABHINAVKRISHNAN_ATS_Resume.pdf';
+      const win = window.open(atsResumeUrl, '_blank');
+      if (!win) {
+        alert('Resume file: ABHINAVKRISHNAN_ATS_Resume.pdf. Please find it in your downloads folder or public folder.');
+      }
+      showToast('Opening ATS Resume...');
+    }
+
+    // Direct Form Handling
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('senderName').value;
+      const email = document.getElementById('senderEmail').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      const mailtoLink = `mailto:abhinavkrishnan8129@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
+      window.location.href = mailtoLink;
+      showToast('Opening default email client...');
+      triggerConfetti();
+    }
+
+    // Photo Upload & Persistence Logic
+    function handlePhotoUpload(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const avatar = document.getElementById('avatarImg');
+          if (avatar) avatar.src = e.target.result;
+          try {
+            localStorage.setItem('user_portfolio_photo', e.target.result);
+          } catch (err) { }
+          showToast('Photo updated in big size!');
+          triggerConfetti();
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // Gentle desktop parallax effect on mouse move
+    if (window.matchMedia('(min-width: 1024px) and (prefers-reduced-motion: no-preference)').matches) {
+      const heroSection = document.getElementById('hero');
+      if (heroSection) {
+        heroSection.addEventListener('mousemove', (e) => {
+          const rect = heroSection.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          const dx = (e.clientX - cx) / (rect.width / 2);
+          const dy = (e.clientY - cy) / (rect.height / 2);
+
+          document.querySelectorAll('[data-parallax="slow"]').forEach(el => {
+            el.style.transform = `translate3d(${dx * -10}px, ${dy * -6}px, 0)`;
+            el.style.transition = 'transform 0.15s ease-out';
+          });
+          document.querySelectorAll('[data-parallax="fast"]').forEach(el => {
+            el.style.transform = `translate3d(${dx * 8}px, ${dy * 5}px, 0)`;
+            el.style.transition = 'transform 0.15s ease-out';
+          });
+        });
+
+        heroSection.addEventListener('mouseleave', () => {
+          document.querySelectorAll('[data-parallax="slow"], [data-parallax="fast"]').forEach(el => {
+            el.style.transform = 'translate3d(0, 0, 0)';
+            el.style.transition = 'transform 0.5s ease-out';
+          });
+        });
+      }
+    }
+  </script>
+
+</body>
+
+</html>
