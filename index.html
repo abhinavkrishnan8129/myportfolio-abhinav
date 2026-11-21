@@ -409,10 +409,10 @@
 
               <div class="w-full h-px bg-zinc-800/80"></div>
 
-              <!-- Stat 3: 3 Certifications -->
+              <!-- Stat 3: 6 Certifications -->
               <div class="flex flex-col items-start lg:items-end">
                 <div class="flex items-baseline gap-1.5">
-                  <span class="font-anton text-4xl sm:text-5xl text-brand-red tracking-tight leading-none">3</span>
+                  <span class="font-anton text-4xl sm:text-5xl text-brand-red tracking-tight leading-none">6</span>
                   <span class="text-xs font-bold text-zinc-500 uppercase">CREDENTIALS</span>
                 </div>
                 <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mt-1">
@@ -458,7 +458,7 @@
       <!-- 3-Column Project Grid (Styled Exactly Like Reference Cards) -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <!-- Project 01: Sales Data Analytics Dashboard -->
+        <!-- Project 01: Sales KPI Dashboard -->
         <div
           class="group relative rounded-xl bg-dark-card border border-dark-border hover:border-brand-red/60 transition-all duration-300 flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-950/30">
           <!-- Thumbnail Graphic -->
@@ -482,8 +482,8 @@
                 class="p-3.5 rounded-xl bg-zinc-800/80 border border-zinc-700/80 text-brand-red mb-2 group-hover:scale-110 group-hover:text-white group-hover:bg-brand-red transition-all">
                 <i data-lucide="table-properties" class="w-8 h-8"></i>
               </div>
-              <span class="font-bold text-sm tracking-wider text-zinc-200">SALES ANALYTICS SUITE</span>
-              <span class="text-[11px] text-zinc-400">Pivot Tables • Slicers • KPI Tracking</span>
+              <span class="font-bold text-sm tracking-wider text-zinc-200">SALES KPI DASHBOARD</span>
+              <span class="text-[11px] text-zinc-400">KPIs • Trends • Interactive Filters</span>
             </div>
 
             <div class="relative z-10 flex justify-between text-[10px] text-zinc-400 font-mono uppercase">
@@ -502,13 +502,12 @@
 
               <h3
                 class="font-bold text-lg text-white group-hover:text-brand-red transition-colors uppercase tracking-wide mb-2">
-                Sales Data Analytics Dashboard
+                Sales KPI Dashboard
               </h3>
 
               <p class="text-xs text-zinc-400 leading-relaxed mb-4">
-                Engineered an interactive sales performance dashboard. Leveraged Pivot Tables, Pivot Charts, dynamic
-                slicers, and descriptive statistics to track multi-category sales trends, product margins, and customer
-                insights.
+                Interactive Excel sales dashboard showcasing revenue, profit, growth, and regional performance through
+                KPI cards, charts, and filters for fast business reporting and decision-making.
               </p>
 
               <!-- Tags -->
@@ -517,8 +516,8 @@
                   class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">Advanced
                   Excel</span>
                 <span
-                  class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">Pivot
-                  Tables</span>
+                  class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">Sales
+                  KPIs</span>
                 <span
                   class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">Data
                   Visualization</span>
@@ -530,11 +529,11 @@
 
             <!-- Footer Action with Dual Buttons for Clients -->
             <div class="grid grid-cols-2 gap-2 pt-2">
-              <a href="Sales_Data_Analytics_Dashboard.xlsx" download="Sales_Data_Analytics_Dashboard.xlsx"
+              <a href="Sales_KPI_Dashboard_by_Abhinav.xlsm" download="Sales_KPI_Dashboard_by_Abhinav.xlsm"
                 class="py-2.5 px-2 rounded-lg bg-brand-red hover:bg-brand-hover text-white text-[11px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all text-center red-glow"
-                title="Download Excel Spreadsheet with Pivot Tables">
+                title="Download the Sales KPI Dashboard Excel workbook">
                 <i data-lucide="download" class="w-3.5 h-3.5"></i>
-                <span>Download .xlsx</span>
+                <span>Download .xlsm</span>
               </a>
               <button onclick="openModal('project1')"
                 class="py-2.5 px-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 text-[11px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all text-center">
@@ -832,6 +831,14 @@
                 <li class="flex items-center gap-2">
                   <i data-lucide="award" class="w-4 h-4 text-brand-red shrink-0"></i>
                   <span><strong>AI Tools Workshop</strong> — Be10x</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="award" class="w-4 h-4 text-brand-red shrink-0"></i>
+                  <span><strong>Python Programming</strong> — Meraki</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="award" class="w-4 h-4 text-brand-red shrink-0"></i>
+                  <span><strong>Artificial Intelligence and Machine Learning</strong> — Meraki</span>
                 </li>
               </ul>
             </div>
@@ -1404,20 +1411,20 @@
     const projectDetails = {
       project1: {
         number: '01',
-        title: 'Sales Data Analytics Dashboard',
-        subtitle: 'Advanced Microsoft Excel Business Intelligence',
-        overview: 'Developed an interactive multi-category sales dashboard that consolidates transaction data, tracks KPIs, and provides dynamic slicing for business intelligence reporting.',
+        title: 'Sales KPI Dashboard',
+        subtitle: 'Advanced Microsoft Excel Sales Analytics',
+        overview: 'Built an interactive Excel sales dashboard that consolidates performance data, tracks core KPIs, and provides dynamic filters for clear sales reporting.',
         bullets: [
-          'Implemented advanced Pivot Tables and Pivot Charts to identify month-over-month growth patterns and revenue contributors.',
-          'Built custom interactive slicers and timeline filters for swift cross-category comparisons.',
-          'Formulated complex Excel functions (XLOOKUP, INDEX/MATCH, nested IFs, SUMIFS, and statistical variance calculation).',
-          'Delivered clean visual data cards tracking Total Sales, Margin %, Top Performing Products, and Regional Performance.'
+          'Designed KPI cards to summarize key revenue and profitability metrics at a glance.',
+          'Built interactive charts and filters for comparing sales performance across periods and categories.',
+          'Applied structured Excel formulas and data visualization for accurate, consistent reporting.',
+          'Presented regional, product, and trend insights in a clear executive dashboard format.'
         ],
-        tags: ['Microsoft Excel', 'Pivot Charts', 'Data Cleaning', 'Dashboard Development', 'Descriptive Statistics'],
+        tags: ['Microsoft Excel', 'Sales KPIs', 'Pivot Charts', 'Dashboard Development', 'Data Visualization'],
         clientAction: {
-          label: 'Download Live Excel (.xlsx)',
-          url: 'Sales_Data_Analytics_Dashboard.xlsx',
-          download: 'Sales_Data_Analytics_Dashboard.xlsx',
+          label: 'Download Sales KPI Dashboard (.xlsm)',
+          url: 'Sales_KPI_Dashboard_by_Abhinav.xlsm',
+          download: 'Sales_KPI_Dashboard_by_Abhinav.xlsm',
           icon: 'download'
         }
       },
